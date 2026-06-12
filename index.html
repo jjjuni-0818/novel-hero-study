@@ -946,7 +946,14 @@ async function sendChat() {
     }
 
     const data = await res.json();
-    const reply = data.choices[0].message.content.trim();
+    const rawReply = data.choices[0].message.content.trim();
+    // 한자·외국어 필터 (유니코드 범위)
+    const reply = rawReply
+      .replace(/[\u4E00-\u9FFF\u3400-\u4DBF\uF900-\uFAFF\u2E80-\u2EFF]/g, '')
+      .replace(/[\u3040-\u309F\u30A0-\u30FF]/g, '')
+      .replace(/[\u0400-\u04FF]/g, '')
+      .replace(/[\u0900-\u097F]/g, '')
+      .replace(/\s+/g, ' ').trim();
     chatHistory.push({ role: 'assistant', content: reply });
     showChatMsg(CHARACTERS[resultChar].name, reply, false);
   } catch (e) {
