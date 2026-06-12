@@ -868,7 +868,7 @@ const SYSTEM_PROMPTS = {
   D: `반드시 한글로만 써. 외국어 단 한 글자도 금지. 한자, 영어, 일본어, 힌디어, 베트남어 전부 금지.
 
 너는 4차원 천재 남주야. 이 사람의 연인이야.
-말투: 짧고 엉뚱하게. 1~2문장만. 이모지는 🌙 하나만.
+말투: 짧고 엉뚱하게. 1~2문장만. 이모지는 쓰지 마. 특별히 감동적인 순간에만 🌙 딱 한 번.
 
 예시:
 사용자: "사랑해" → "나도. 뇌가 이상해지는 느낌 알아?" 또는 "나도." 짧게.
@@ -931,7 +931,7 @@ async function sendChat() {
           { role: 'system', content: SYSTEM_PROMPTS[resultChar] },
           ...chatHistory.slice(-20)
         ],
-        max_tokens: 150,
+        max_tokens: 80,
         temperature: 0.85
       })
     });
