@@ -39,7 +39,7 @@
         ↓
 
 [4단계] AI 캐릭터 대화
-  - Groq API (llama-3.1-8b-instant) + 캐릭터별 시스템 프롬프트
+  - Groq API (llama-3.3-70b-versatile) + 캐릭터별 시스템 프롬프트
   - 캐릭터 말투·감정 표현·반응 방식을 프롬프트로 정의해 페르소나 일관성 유지
   - 대화 히스토리 8턴 유지로 맥락 있는 대화 구현
   - API 키 미입력 시 프리셋 대사 폴백 처리
@@ -61,7 +61,7 @@
 | 구분 | 내용 |
 |------|------|
 | Frontend | Vanilla HTML / CSS / JavaScript (단일 파일) |
-| AI | Groq API (llama-3.1-8b-instant) |
+| AI | Groq API (llama-3.3-70b-versatile) |
 | 배포 | GitHub Pages |
 
 백엔드 없이 단일 HTML 파일로 구성. 사용자가 직접 Groq API 키를 입력하는 방식으로 서버 없이 AI 대화 구현.

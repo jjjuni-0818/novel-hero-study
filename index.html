@@ -639,6 +639,9 @@ function goResult() {
   timerRunning = false;
   document.getElementById('chat-fab').style.display = 'none';
   document.getElementById('chat-popup').classList.remove('open');
+  // 캐릭터 바뀔 수 있으므로 채팅 초기화
+  chatHistory = [];
+  document.getElementById('chat-msgs').innerHTML = '';
   showPage('page-result');
 }
 
